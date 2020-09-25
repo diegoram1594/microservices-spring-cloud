@@ -1,12 +1,21 @@
 package com.microservices.currencyexchangeservice;
 
-import java.math.BigDecimal;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import java.math.BigDecimal;
+@Entity
 public class ExchangeValue {
+    @Id
+    @GeneratedValue
     private Long id;
-    private String from;
-    private String to;
+    private String currencyForm;
+    private String currencyTo;
     private BigDecimal conversionMultiple;
+    private Integer port;
+
+
 
     public ExchangeValue() {
     }
@@ -14,8 +23,8 @@ public class ExchangeValue {
     public ExchangeValue(Long id, String from, String to, BigDecimal conversionMultiple) {
         super();
         this.id = id;
-        this.from = from;
-        this.to = to;
+        this.currencyForm = from;
+        this.currencyTo = to;
         this.conversionMultiple = conversionMultiple;
     }
 
@@ -27,20 +36,20 @@ public class ExchangeValue {
         this.id = id;
     }
 
-    public String getFrom() {
-        return from;
+    public String getCurrencyForm() {
+        return currencyForm;
     }
 
-    public void setFrom(String from) {
-        this.from = from;
+    public void setCurrencyForm(String from) {
+        this.currencyForm = from;
     }
 
-    public String getTo() {
-        return to;
+    public String getCurrencyTo() {
+        return currencyTo;
     }
 
-    public void setTo(String to) {
-        this.to = to;
+    public void setCurrencyTo(String to) {
+        this.currencyTo = to;
     }
 
     public BigDecimal getConversionMultiple() {
@@ -49,5 +58,13 @@ public class ExchangeValue {
 
     public void setConversionMultiple(BigDecimal conversionMultiple) {
         this.conversionMultiple = conversionMultiple;
+    }
+
+    public Integer getPort() {
+        return port;
+    }
+
+    public void setPort(Integer port) {
+        this.port = port;
     }
 }

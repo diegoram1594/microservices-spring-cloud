@@ -1,0 +1,1 @@
+insert into exchange_value(id,currency_form,currency_to,conversion_multiple) values (1001,'USD','COP',3811);
